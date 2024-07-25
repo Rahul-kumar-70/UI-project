@@ -1,0 +1,36 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Speed Convertor</title>
+        <style>
+            body{
+                display:flex;
+                justify-content:center;
+            }
+            div{
+                border:10px;
+                background:blue;
+                width:500;
+                height:200px;
+                color:white;
+            }
+            input{
+                height:40px;
+                margin-top:30px;
+                outline:none;
+            }
+            input:hover{
+                border: 3px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <h2><u>Temperature Convertor</u></h2>
+            <input type="text" id="celcius" oninput="fohrenheit.value=(celcius.value*(9/5)+32)" placeholder="celcius degree.." />
+            <span>=</span>
+            <input type="text" id="fohrenheit" oninput="celcius.value=(fohrenheit.value*(5/9)-32)" placeholder="fohrenheit.." />
+        </div>
+    </body>
+</html>
