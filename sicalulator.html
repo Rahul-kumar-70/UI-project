@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            #main{
+                background: blue;
+                width:270px;
+                height: 350px;
+                margin:auto;
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            #main:hover{
+                box-shadow:0 0 0 5px red;
+            
+            
+            }
+            h2{
+                text-align: center;
+                text-decoration: 1px wavy underline;
+            }
+            #main div{
+                margin-bottom: 15px;
+            }
+            label,span,button,output{
+                font-size:20px;
+            }
+            input{
+                border:none;
+                outline: none;
+                background: blue;
+                border-bottom:2px solid white;
+                color: white;
+            }
+            button{
+                width: 180px;
+                height: 30px;
+                font-size:21;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                background: linear-gradient(to right,red,orange);
+                color: white;
+                border-radius: 5px;
+            }
+            button:hover{
+                background: linear-gradient(to left,red,orange);
+                border-radius: 15px;
+            }
+            output{
+                color: yellow;
+            }
+            #main > div:nth-child(5){
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="main">
+        <u><h2>Interest calculator</h2></u>
+        <div >
+            <label for="pamt" >Loan Amount </label><br>
+            <input type="text" id="pamt" autofocus />
+            <span>&#8377;</span>
+        </div>
+        <div>
+            <label for="time" >Time </label><br>
+            <input type="text" id="time"  />
+            <span>Year(s)</span>
+        </div>
+        <div>
+            <label for="rate" >Rate of Interest </label><br>
+            <input type="text" id="rate" maxlenght="2" />
+            <span>%</span>
+        </div>
+        <div align=center;>
+            <button onclick="getAmount()">get amount</button>
+        </div>
+        <div>
+            <output id="intAmt"></output>
+            <br>
+            <output id="totAmt"></output>
+        </div>
+    </div>
+    <script>function getAmount()
+        {
+            let p,r,t,si,tamt;
+            p=pamt.value;
+            t=time.value;
+            r=rate.value;
+            si=(p*r*t)/100;
+            tamt=+si + +p;
+            intAmt.innerHTML="Interset amount : &#8377;"+si;
+            totAmt.innerHTML="Total Amount : &#8377;"+tamt;
+        }</script>
+    </body>
+</html>
