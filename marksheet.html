@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Marksheet</title>
+        <style>
+            body{
+                display:flex;
+                justify-content:center;
+            }
+            #d1{
+                background:blue;
+                border:2px solid red;
+                border-radius:5px;
+                width:550px;
+                height:650px;
+            }
+            #d1,label{
+                font-size:25px;
+                color:white;
+                margin-left:20px;
+            }
+            #d1,input{
+                font-size:20px;
+            }
+            #d1,button{
+                 margin-left:150px;
+                 font-size:25px;
+                 border-radius:10px;
+            }
+            button:hover{
+                background:yellow;
+                border:2px solid red;
+                border-radius:15px;
+            }
+            output{
+                margin-left:20px;
+                color:yellow;
+                font-size:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+        <h1 align="center" style="color:white;"><u>Marksheet</u></h1><br>
+        <label for="username" style="margin-left:50px;">Name:</label>
+        <input style="margin-left:50px;" type="text" id="username"  /><br><br>
+        <label for="html" style="margin-left:50px;">HTML:</label>
+        <input style="margin-left:40px;" type="text" id="html" maxlenght="2" /><br><br>
+        <label for="css" style="margin-left:70px;">CSS:</label>
+        <input style="margin-left:45px;" type="text" id="css" maxlenght="2" /><br><br>
+        <label for="javascripts">JAVASCRIPTS:</label>
+        <input type="text" id="javascripts" maxlenght="3"  /><br><br>
+        <label for="bootstrap">BOOTSTRAP:</label>
+        <input type="text" id="bootstrap" maxlenght="3"  /><br><br><br>
+        <button onclick="getResult()" >Get Marks</button>
+        <div>
+        <output id="outputUser"></output><br>
+        <output id="total"></output><br>
+        <output id="average"></output><br>
+        <output id="grade"></output>
+        </div>
+        </div>
+        <script>
+            function getResult(){
+
+                let username = document.getElementById("username");
+
+            let hm,cs,ja,bo,tot,grd,avg,na;
+            na= username.value;
+            hm=+html.value;
+            cs=+css.value;
+            ja=+javascripts.value;
+            bo=+bootstrap.value;
+            tot= hm + cs + ja + bo;
+            avg=tot/4;
+
+            if (hm>=40 && cs>=40 && ja>=40 && bo>=40){
+                grd= avg>=90 ? "A+" : avg>=80 ? "A" : avg>=70 ? "B+" :avg>=60 ? "B" :avg>=50 ? "C" : "D" ;
+            }
+            else {
+                grd="Fail";
+            }
+            outputUser.value="Name : "+na;
+            total.innerHTML="Total Marks :"+tot;
+            average.value="Average  :"+avg;
+            grade.value="Grade   :"+grd;
+        }
+        </script>
+    </body>
+</html>
